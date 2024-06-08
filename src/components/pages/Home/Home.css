@@ -82,7 +82,41 @@
     animation: flipLeft 1s linear;
 
 }
-
+.home-container .overview{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.home-container .overview .info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    padding: 5px;
+}
+.home-container .overview .info .education,
+.home-container .overview .info .experience{
+    border-radius: 15px;
+    padding: 5px;
+    border: 2px solid white;
+    width: 400px;
+    height: 200px;
+    text-align: center;
+}
+.home-container .overview .info .education .line,
+.home-container .overview .info .experience .line{
+    color: rgb(229, 151, 0);
+}
+.home-container .overview .about{
+    width: 80%;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 1.5rem;
+}
 @keyframes flipRight{
     0%{
         transform: rotateY(0deg); 
@@ -99,3 +133,4 @@
         transform: rotateY(0deg); 
     }
 }
+

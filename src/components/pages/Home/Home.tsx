@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import personalImage from "../../../assets/myImage.jpg"
 import "./Home.css";
-import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faCentercode, faCodepen, faCodiepie, faConnectdevelop, faFacebook, faFreeCodeCamp, faGithub, faLinkedin, faStrava, faSuperpowers } from "@fortawesome/free-brands-svg-icons";
 function Home(){
     const [isFlipped, setIsFlipped] = useState(false);
     useEffect(() => {
@@ -60,11 +60,25 @@ function Home(){
                 />
                 }                
             </div>
-            <div className="aboutMe">
-                <h1>About Me</h1>   
-                <div className="education"></div>
-                <div className="experience"></div>
-                <p>
+            <div className="overview">
+                <h1>Overview</h1> 
+                <div className="info">
+                    <div className="education">
+                        <h2>Education</h2>
+                        <p className="line">________________________________________</p>
+                        <p>
+                            <strong>Struer Statsgymnasium</strong>
+                        </p>
+                        <p>HTX</p>
+                        <i>2018 - 2021</i>
+                    </div>
+                    <div className="experience">
+                        <h2>Experience</h2>
+                        <p className="line">________________________________________</p>
+                        <p>2 years Frontend and Backend Development </p>
+                    </div>
+                </div>  
+                <p className="about">
                     I am a dedicated Software Engineering student at the University of Southern Denmark (SDU), currently in my 6th semester. 
                     As I approach the completion of my bachelor’s degree and look forward to my master's, I am driven by the transformative potential of software engineering to solve real-world challenges and innovate for a better future. 
                     Passionate about continuous learning, I am eager to engage in projects that challenge my creativity and push technological boundaries.

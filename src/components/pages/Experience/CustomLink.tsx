@@ -1,12 +1,12 @@
+// CustomLink.tsx
 import React from "react";
-import "./About.css";
-import AboutMe from "../../../assets/about_me.jpg";
-function About(){
+import "./Experience.css";
+
+function CustomLink() {
     return(
         <div className="about-container">
             <h1>About me</h1>
             <div className="content">
-                <img src={AboutMe} alt="AboutMe" />
                 <p>
                     I  study  civil  engineering,  software  engineering  in  my  6th  semester  at  SDU  (University  of 
                     Southern Denmark). As a student in Software Engineering, I have gained a strong foundation 
@@ -29,4 +29,4 @@ function About(){
     )
 }
 
-export default About;
+export default CustomLink;
