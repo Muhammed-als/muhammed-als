@@ -60,13 +60,12 @@
     padding: 5px;
     margin-left: 5px;
     transition: all 0.3s ease-in-out;
+    text-align: center;
 }
 .home-container .hiddenImage {
     border-radius: 50%;
     box-shadow: 0 6px 20px rgb(8, 69, 113), 0 6px 20px rgb(8, 69, 113);
     background-color: rgb(32, 36, 45);
-    width: 600px;
-    height: 600px;
     margin-left: 20px;
     transform-style: preserve-3d;
     animation: flipRight 2s linear;
@@ -74,8 +73,6 @@
 .home-container .introduction .personalImage{
     border-radius: 50%; 
     box-shadow: 0 6px 20px rgb(8, 69, 113), 0 6px 20px rgb(8, 69, 113); 
-    width: 600px;
-    height: 600px;
     margin-left: 20px;
     transform-style: preserve-3d;
     backface-visibility: hidden; 
@@ -93,7 +90,9 @@
 .home-container .overview .info{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
     align-items: center;
     width: 50%;
     padding: 5px;
@@ -133,4 +132,69 @@
         transform: rotateY(0deg); 
     }
 }
+@media only screen and (max-width: 1024px){
+    .home-container {
+        padding-top: 330px;
+        width: fit-content;
+        align-items: center;
+        box-sizing: border-box; /* Add this to ensure padding and border are included in the element's total width and height */
+    }
+    .home-container .introduction {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%; 
+        align-items: center;
+        margin: auto;
+        box-sizing: border-box; /* Add this to ensure padding and border are included in the element's total width and height */
+    }
+    .home-container .introduction .personalImage,
+    .home-container .introduction .hiddenImage {
+        width: 300px;
+        height: 300px;
+        margin: auto;
+    }
+    .home-container .introduction p,
+    .home-container .overview .about{
+        width: 100%;
+        text-align: center;
+        margin-top: 2%;
+        font-size: 1.5rem;
+        padding: 1%;
+    }
+    .home-container .overview .info .education,
+    .home-container .overview .info .experience{
+        border-radius: 15px;
+        padding: 5px;
+        border: 2px solid white;
+        width: 100%;
+        height: 100%;
+    }
 
+}
+@media only screen and (min-width:1024px){
+    .home-container .introduction .personalImage,
+    .home-container .introduction .hiddenImage {
+        width: 500px;
+        height: 500px;
+    }
+    .home-container .introduction{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        font-size: 2rem;
+        padding: 10px 20px;
+    }
+}
+@media only screen and (min-width:1440px){
+    .home-container .introduction .personalImage,
+    .home-container .introduction .hiddenImage {
+        width: 600px;
+        height: 600px;
+    }
+    .home-container .introduction{
+        font-size: 2.5rem;
+    }
+}

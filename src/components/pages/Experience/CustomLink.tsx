@@ -1,32 +1,33 @@
 // CustomLink.tsx
 import React from "react";
 import "./Experience.css";
+import { useParams } from 'react-router-dom';
+import skills from "./skills";
 
 function CustomLink() {
-    return(
-        <div className="about-container">
-            <h1>About me</h1>
-            <div className="content">
-                <p>
-                    I  study  civil  engineering,  software  engineering  in  my  6th  semester  at  SDU  (University  of 
-                    Southern Denmark). As a student in Software Engineering, I have gained a strong foundation 
-                    in software development methods, data structures, algorithms, networks, computer systems 
-                    as well as software testing and quality assurance. I have been able to develop my 
-                    programming skills that I got from high school and at the same time I have gained experience 
-                    with different programming languages and frameworks. My projects have also allowed me to 
-                    become  better  and  faster  at  solving  problems.  I  am  currently  in  the  last  semesters  of 
-                    completing my bachelor's and looking forward to starting my master's after bachelor's. I am 
-                    motivated  by  the  endless  possibilities  that  Software  Engineering  offers  and  the  ability  to 
-                    create  something  that  can  change  the  world.  I  am  excited  at  the  prospect  of  working  on 
-                    projects that challenge me to think creatively and push the boundaries of what is possible. 
-                    I'm  also  motivated  by  the  opportunity  to  make  a  difference  in  people's  lives  by  creating 
-                    software  that  solves  real-world  problems.  I  am  highly  motivated  to  continuously  learn  and 
-                    improve  my  skills  so  that  I  can  keep  up  with  the  rapid  developments  in  technology.  I  am 
-                    confident that I can achieve my goal of becoming a successful software engineer.
-                </p>
+    const { id } = useParams<{ id: string }>();
+
+    if (id === undefined) {
+        return <div>Skill not found</div>;
+    }
+    const skillIndex = parseInt(id);
+    if (isNaN(skillIndex) || skillIndex < 0 || skillIndex >= skills.length) {
+        return <div>Skill not found</div>;
+    }
+    const skill = skills[skillIndex];
+
+    return (
+        <div className="skill-container">
+            <div className="skill-name">
+                <h1>{skill.name}</h1>
             </div>
+            <div className="skill-info">
+                <img src={skill.path} alt={skill.name} />
+                <div className="description" dangerouslySetInnerHTML={{ __html: skill.description }} /> {/* Render HTML content */}
+                </div>
+            
         </div>
-    )
+    );
 }
 
 export default CustomLink;

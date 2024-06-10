@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import personalImage from "../../../assets/myImage.jpg"
 import "./Home.css";
-import { faCentercode, faCodepen, faCodiepie, faConnectdevelop, faFacebook, faFreeCodeCamp, faGithub, faLinkedin, faStrava, faSuperpowers } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 function Home(){
     const [isFlipped, setIsFlipped] = useState(false);
     useEffect(() => {
@@ -11,10 +11,20 @@ function Home(){
         }, 1000);
         return () => clearTimeout(timeout);
       }, []); 
-    
     return (
         <div className="home-container">
             <div className="introduction">
+            {!isFlipped?(
+                    <div className="hiddenImage">
+
+                    </div>
+                ):
+                <img
+                    className="personalImage"
+                    src={personalImage}
+                    alt="personalImage"
+                />
+                } 
                 <div className="info">
                     <p>
                         Hello, I'm <br />
@@ -47,18 +57,7 @@ function Home(){
                             Download CV (Danish)
                         </a>
                     </div>
-                </div>
-                {!isFlipped?(
-                    <div className="hiddenImage">
-
-                    </div>
-                ):
-                <img
-                    className="personalImage"
-                    src={personalImage}
-                    alt="personalImage"
-                />
-                }                
+                </div>             
             </div>
             <div className="overview">
                 <h1>Overview</h1> 
@@ -71,6 +70,26 @@ function Home(){
                         </p>
                         <p>HTX</p>
                         <i>2018 - 2021</i>
+                    </div>
+                    <div style={{ display:"flex",flexDirection:"row", gap: "5px"}}>
+                        <div className="education">
+                            <h2>Current Education</h2>
+                            <p className="line">________________________________________</p>
+                            <p>
+                                <strong>University of Southern Denmark (SDU)</strong>
+                            </p>
+                            <p>Software Engineering (Bachelor)</p>
+                            <i>2021 - 2024</i>
+                        </div>
+                        <div className="education">
+                            <h2>Next Education</h2>
+                            <p className="line">________________________________________</p>
+                            <p>
+                                <strong>University of Southern Denmark (SDU)</strong>
+                            </p>
+                            <p>Software Engineering (Master)</p>
+                            <i>2024 - 2026</i>
+                        </div>
                     </div>
                     <div className="experience">
                         <h2>Experience</h2>
