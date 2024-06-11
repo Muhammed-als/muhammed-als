@@ -1,0 +1,205 @@
+.experience-container{
+    padding-top: 150px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.experience-container h1{
+    padding: 5px;
+    color: rgb(0, 149, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
+}
+.experience-container .contnet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 80%;
+    position: relative;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid rgb(229, 151, 0);
+    overflow: hidden;
+}
+.experience-container .contnet .skills{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+.experience-container .contnet .skills .skill{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    
+}
+.experience-container .contnet .skills .skill:hover{
+    transform: translateY(-5px);
+}
+.experience-container .contnet .skills .skill .skill-image{
+    width: 100%;
+    background: linear-gradient(to right, #283048, #859398);
+}
+.experience-container .contnet .skills .skill .skill-image img{
+    width: 50%;
+    height: 150px;
+    margin: auto;
+    background-size: cover;
+    background: none;
+    background-position: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 5px;
+}
+.experience-container .contnet .skills .skill .skill-info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px;
+    background-image: linear-gradient(to bottom right, #121C84, #8278DA);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.experience-container .contnet .skills .skill .skill-info p{
+    background: none;
+}
+.skill-container{
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+}
+.skill-container .skill-name{
+    padding: 5px;
+    color: rgb(0, 149, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2%;
+}
+.skill-container .skill-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: 2px solid white;
+    margin-bottom: 1%;
+    padding: 5px;
+    width: 80%;
+    font-size: larger;
+}
+.skill-container .skill-info img{
+    width: 300px;
+    height: 300px;
+}
+.skill-container .skill-info .description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.skill-container .skill-info img{
+    width: 80%;
+    max-width: 300px;
+}
+.skill-container .skill-info .description div{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.skill-container .skill-info .description img{
+    width: 100%;
+    height: 100%;
+}
+@media only screen and (max-width:1024px){
+    .experience-container,
+    .skill-container{
+        padding-top: 330px;
+        width: 100%;
+    }
+    .experience-container .contnet{
+        width: 90%;
+    }
+    .experience-container .contnet .skills .skill{
+        width: 100%;
+    }
+    .experience-container .contnet .skills .skill .skill-image img{
+        width: 100%;
+        height: 100%;
+        max-width: 300px;
+        max-height: 200px;
+    }
+    .experience-container .contnet .skills .skill .skill-info{
+        font-size: 1rem;
+    }
+    .skill-container .skill-info .description div{
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width:768px){
+    .experience-container .contnet{
+        width: 90%;
+    }
+    .experience-container .contnet .skills .skill{
+        width: 30%;
+    }
+    .experience-container .contnet .skills .skill .skill-image img{
+        width: 100%;
+        max-width: 220px;
+        height: 150px;
+    }
+    .experience-container .contnet .skills .skill .skill-info{
+        font-size: 1rem;
+        height: 120px;
+    } 
+    .skill-container{
+        width: 100%;
+    }
+    .skill-container .skill-info{
+        width: 90%;
+    }
+}
+@media only screen and (min-width:1024px){
+    .experience-container .contnet{
+        width: 80%;
+    }
+    .experience-container .contnet .skills .skill .skill-info{
+        font-size: 1.2rem;
+    }
+}
+@media only screen and (max-height: 600px) {
+    .experience-container,
+    .skill-container{
+        padding-top: 200px;
+    }
+}

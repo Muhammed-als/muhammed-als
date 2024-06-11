@@ -1,33 +1,30 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/pages/Home/Home';
+import About from './components/pages/About/About';
+import "./App.css";
+import Experience from './components/pages/Experience/Experience';
+import CustomLink from './components/pages/Experience/CustomLink';
+import Projects from './components/pages/projects/Projects';
+import SelectedProject from './components/pages/projects/SelectedProject';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="App">
+        <Navbar/>
+        <Routes>
+          <Route path="/muhammed-als/" element={<Home/>} />
+          <Route path="/muhammed-als/about" element={<About/>} />
+          <Route path="/muhammed-als/skills/" element={<Experience/>} />
+          <Route path="/muhammed-als/skills/:id/:name" element={<CustomLink />} />
+          <Route path="/muhammed-als/projects/" element={<Projects />} />
+          <Route path="/muhammed-als/projects/:id/:name" element={<SelectedProject/>} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    </Router>
   )
 }
 
