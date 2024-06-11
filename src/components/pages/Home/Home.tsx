@@ -50,10 +50,10 @@ function Home(){
                         </a>
                     </div>
                     <div className="cv">
-                        <a href="../../public/downloads/Muhammed Alsabban-CV_english.pdf" download="Muhammed Alsabban-CV_english.pdf">
+                        <a href="/downloads/Muhammed Alsabban-CV_english.pdf" download="Muhammed Alsabban-CV_english.pdf">
                             Download CV (English)
                         </a>
-                        <a href="../../public/downloads/Muhammed Alsabban-CV_danish.pdf" download="Muhammed Alsabban-CV_danish.pdf">
+                        <a href="/downloads/Muhammed Alsabban-CV_danish.pdf" download="Muhammed Alsabban-CV_danish.pdf">
                             Download CV (Danish)
                         </a>
                     </div>
