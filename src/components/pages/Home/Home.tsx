@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import personalImage from "../../../assets/myImage.jpg"
+import danishCV from "../../../assets/cv/Muhammed Alsabban-CV_danish.pdf";
+import englishCV from "../../../assets/cv/Muhammed Alsabban-CV_english.pdf";
 import "./Home.css";
 import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 function Home(){
@@ -50,10 +52,10 @@ function Home(){
                         </a>
                     </div>
                     <div className="cv">
-                        <a href="/downloads/Muhammed Alsabban-CV_english.pdf" download="Muhammed Alsabban-CV_english.pdf">
+                        <a href={englishCV} download="Muhammed Alsabban-CV_english.pdf">
                             Download CV (English)
                         </a>
-                        <a href="/downloads/Muhammed Alsabban-CV_danish.pdf" download="Muhammed Alsabban-CV_danish.pdf">
+                        <a href={danishCV} download="Muhammed Alsabban-CV_danish.pdf">
                             Download CV (Danish)
                         </a>
                     </div>
