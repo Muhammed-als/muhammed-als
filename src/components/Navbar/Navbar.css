@@ -91,3 +91,20 @@ nav .navigationLinks li{
     }
     
 }
+@media only screen and (max-height: 600px) {
+    nav {
+        padding: 5px;
+    }
+    nav ul {
+        padding: 5px;
+    }
+    nav .homepage {
+        font-size: 1.2rem;
+        padding: 5px;
+        margin-bottom: 1%;
+    }
+    nav .navigationLinks li {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+}

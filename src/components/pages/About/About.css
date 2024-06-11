@@ -76,3 +76,9 @@
         margin: auto;
     }
 }
+@media only screen and (max-height: 600px) {
+    .about-container{
+        padding-top: 200px;
+    }
+
+}

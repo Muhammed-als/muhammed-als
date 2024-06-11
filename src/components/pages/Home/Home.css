@@ -137,7 +137,6 @@
         padding-top: 330px;
         width: fit-content;
         align-items: center;
-        box-sizing: border-box; /* Add this to ensure padding and border are included in the element's total width and height */
     }
     .home-container .introduction {
         display: flex;
@@ -196,5 +195,10 @@
     }
     .home-container .introduction{
         font-size: 2.5rem;
+    }
+}
+@media only screen and (max-height: 600px) {
+    .home-container {
+        padding-top: 200px;
     }
 }
