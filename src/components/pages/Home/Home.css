@@ -89,12 +89,12 @@
 }
 .home-container .overview .info{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
     align-items: center;
-    width: 50%;
+    width: auto;
     padding: 5px;
 }
 .home-container .overview .info .education,
@@ -103,12 +103,14 @@
     padding: 5px;
     border: 2px solid white;
     width: 400px;
-    height: 200px;
     text-align: center;
 }
 .home-container .overview .info .education .line,
 .home-container .overview .info .experience .line{
-    color: rgb(229, 151, 0);
+    background-color: rgb(229, 151, 0);
+    width: 100%;
+    padding: 2px;
+    border-radius: 15px;
 }
 .home-container .overview .about{
     width: 80%;
