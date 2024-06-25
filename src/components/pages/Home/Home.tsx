@@ -66,26 +66,25 @@ function Home(){
                 <div className="info">
                     <div className="education">
                         <h2>Education</h2>
-                        <p className="line">________________________________________</p>
+                        <p className="line"></p>
                         <p>
                             <strong>Struer Statsgymnasium</strong>
                         </p>
                         <p>HTX</p>
                         <i>2018 - 2021</i>
-                    </div>
-                    <div style={{ display:"flex",flexDirection:"row", gap: "5px"}}>
-                        <div className="education">
-                            <h2>Current Education</h2>
-                            <p className="line">________________________________________</p>
-                            <p>
+                        <br />
+                        <p>______________________________</p>
+                        <p>
                                 <strong>University of Southern Denmark (SDU)</strong>
-                            </p>
-                            <p>Software Engineering (Bachelor)</p>
-                            <i>2021 - 2024</i>
-                        </div>
+                        </p>
+                        <p>Software Engineering (Bachelor)</p>
+                        <i>2021 - 2024</i>
+
+                    </div>
+                    <div>
                         <div className="education">
                             <h2>Next Education</h2>
-                            <p className="line">________________________________________</p>
+                            <p className="line"></p>
                             <p>
                                 <strong>University of Southern Denmark (SDU)</strong>
                             </p>
@@ -95,8 +94,8 @@ function Home(){
                     </div>
                     <div className="experience">
                         <h2>Experience</h2>
-                        <p className="line">________________________________________</p>
-                        <p>2 years Frontend and Backend Development </p>
+                        <p className="line"></p>
+                        <p>3 years Frontend and Backend Development </p>
                     </div>
                 </div>  
                 <p className="about">
