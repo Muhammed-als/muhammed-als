@@ -99,8 +99,7 @@ function Home(){
                     </div>
                 </div>  
                 <p className="about">
-                    I am a dedicated Software Engineering student at the University of Southern Denmark (SDU), currently in my 6th semester. 
-                    As I approach the completion of my bachelor’s degree and look forward to my master's, I am driven by the transformative potential of software engineering to solve real-world challenges and innovate for a better future. 
+                    I am a dedicated Software Engineering student at the University of Southern Denmark (SDU). <br /> I am driven by the transformative potential of software engineering to solve real-world challenges and innovate for a better future. 
                     Passionate about continuous learning, I am eager to engage in projects that challenge my creativity and push technological boundaries.
                 </p>
             </div>
