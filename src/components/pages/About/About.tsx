@@ -8,7 +8,7 @@ function About(){
             <div className="content">
                 <img src={AboutMe} alt="AboutMe" />
                 <p>
-                    I  study  civil  engineering,  software  engineering  in  my  6th  semester  at  SDU  (University  of 
+                    I  study  civil  engineering, software  engineering  in  my  first semester of my master's degree at SDU (University  of 
                     Southern Denmark). As a student in Software Engineering, I have gained a strong foundation 
                     in software development methods, data structures, algorithms, networks, computer systems 
                     as well as software testing and quality assurance. I have been able to develop my 
