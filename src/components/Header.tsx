@@ -1,6 +1,6 @@
 import { motion, MotionValue } from "framer-motion";
 import MyImage from '../assets/about_me.jpg';
-import { Briefcase, Code } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import DanishCV from '../assets/cv/Muhammed Alsabban-CV_danish.pdf';
 import EnglishCV from '../assets/cv/Muhammed Alsabban-CV_english.pdf';
 interface Props {
@@ -99,15 +99,6 @@ export default function Header({scale}: Props) {
               animate={{ x: [0, 5, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             >→</motion.span>
-          </motion.a>
-
-          <motion.a 
-            href="#contact" 
-            className="px-8 py-3 border border-blue-500 rounded-full text-blue-400 hover:bg-blue-600/10 transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Contact Me
           </motion.a>
         </motion.div>
 
