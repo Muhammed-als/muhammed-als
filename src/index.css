@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-gray-100;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600;
+}
+
+.card-gradient {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+}
+
+.hero-gradient {
+  background: radial-gradient(
+    circle at center,
+    rgba(88, 28, 135, 0.15) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(192, 132, 252, 0.5);
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
