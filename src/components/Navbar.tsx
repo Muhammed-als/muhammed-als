@@ -8,7 +8,7 @@ export default function Navbar({headerRef}: Props) {
         <header ref={headerRef} className="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur-sm">
             <nav className="container mx-auto px-6 py-4 flex justify-between">
                 <motion.h1 className="text-2xl font-bold text-[#3B82F6]" whileHover={{ scale: 1.05 }}>
-                    Portfolio
+                    Muhammed
                 </motion.h1>
                 <div className="flex space-x-6">
                     <a href="https://github.com/Muhammed-als" target="_blank" className="hover:text-blue-400 transition-colors"><Github className="w-6 h-6" /></a>
