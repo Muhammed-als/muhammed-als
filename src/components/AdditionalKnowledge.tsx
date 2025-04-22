@@ -29,7 +29,8 @@ export default function AdditionalKnowledge ({additionalKnowledgeRef}: Props) {
     return (
         <section ref={additionalKnowledgeRef} className="py-20 bg-gray-900/50">
             <div className="mx-auto px-6 w-full">
-                <h3 className="text-4xl font-bold mb-12 text-blue-400 text-center">Additional Expertise</h3>
+                <h3 className="text-4xl font-bold mb-12 text-blue-400 text-center"> Extra Knowledge</h3>
+                <p className="text-gray-400 text-center mb-8">Here are some of the additional skills I have acquired over the years.</p>
                 <div className="mx-auto w-full">
                     <div className="flex flex-wrap sm:grid sm:grid-cols-3 gap-2 justify-center items-center">
                         {additionalKnowledge.map((knowledge, index) => (
