@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -8,7 +8,6 @@ import Header from './components/Header';
 import About from './components/About';
 import Education from './components/Education';
 import TechnicalExpertise from './components/TechnicalExpertise';
-import AdditionalKnowledge from './components/AdditionalKnowledge';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
@@ -19,103 +18,54 @@ function App() {
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
   const aboutRef = useRef(null);
-  const additionalKnowledgeRef = useRef(null);
+
   const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
 
   useGSAP(() => {
     gsap.from(headerRef.current, {
       y: -100,
       opacity: 0,
       duration: 1,
-      ease: "power4.out"
-    });
-
-    gsap.from(".skill-item", {
-      width: "0%",
-      duration: 1.5,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: skillsRef.current,
-        start: "top center+=100",
-        toggleActions: "play none none none"
-      }
+      ease: 'power4.out',
     });
 
     gsap.fromTo(
-      ".additional-skill",
-      {
-        scale: 0,
-        opacity: 0,
-        rotation: -180
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        rotation: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: additionalKnowledgeRef.current,
-          start: "top center+=100",
-          toggleActions: "play none none none"
-        }
-      }
-    );
-
-    gsap.fromTo(
-      ".project-card",
-      {
-        y: 100,
-        opacity: 0
-      },
+      '.project-card',
+      { y: 80, opacity: 0 },
       {
         y: 0,
         opacity: 1,
         duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out",
+        stagger: 0.15,
+        ease: 'power3.out',
         scrollTrigger: {
           trigger: projectsRef.current,
-          start: "top center+=100",
-          toggleActions: "play none none reverse"
-        }
+          start: 'top center+=120',
+          toggleActions: 'play none none none',
+        },
       }
     );
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-950">
-      {/* Header */}
-      <Navbar
-        headerRef={headerRef}
+    <div className="relative min-h-screen overflow-x-hidden bg-ink-900">
+      {/* Scroll progress bar */}
+      <motion.div
+        className="fixed left-0 top-0 z-[60] h-0.5 w-full origin-left bg-gradient-to-r from-accent-400 to-indigo-400"
+        style={{ scaleX: progress }}
       />
-      {/* Hero Section with Personal Image */}
-      <Header
-        scale={scale}
-      />
-      {/* About Section */}
-      <About
-        aboutRef={aboutRef}
-      />
-      {/* Education Section */}
-      <Education/>
-      {/* Technical Expertise */}
-      <TechnicalExpertise
-        skillsRef={skillsRef}
-      />
-      {/* Additional Technical Knowledge */}
-      <AdditionalKnowledge
-        additionalKnowledgeRef={additionalKnowledgeRef}
-      />
-      {/* Projects Section */}
-      <Projects
-        projectsRef={projectsRef}
-      />
-      {/* Footer */}
-      <Footer/>
+
+      <Navbar headerRef={headerRef} />
+      <main>
+        <Header scale={scale} />
+        <About aboutRef={aboutRef} />
+        <Education />
+        <TechnicalExpertise skillsRef={skillsRef} />
+        <Projects projectsRef={projectsRef} />
+      </main>
+      <Footer />
     </div>
   );
 }

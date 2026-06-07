@@ -1,151 +1,178 @@
 import { motion, MotionValue } from "framer-motion";
-import MyImage from '../assets/about_me.jpg';
-import { Briefcase } from "lucide-react";
-import DanishCV from '../assets/cv/Muhammed Alsabban-CV_danish.pdf';
-import EnglishCV from '../assets/cv/Muhammed Alsabban-CV_english.pdf';
+import MyImage from "../assets/about_me.jpg";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
+
 interface Props {
-    scale: MotionValue<number>
+    scale: MotionValue<number>;
 }
-export default function Header({scale}: Props) {
-  return (
-    <section className="min-h-screen flex items-center justify-center hero-gradient pt-32">
-      <motion.div 
-        className="container mx-auto px-6 text-center space-y-4"
-        style={{ scale }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <motion.div
-          className="mb-8 relative w-48 h-48 mx-auto group"
-          initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1.2, type: "spring", stiffness: 100 }}
-          whileHover={{ scale: 1.05 }}
-        >
-          <motion.div
-            className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full opacity-75 blur-lg"
-            animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-          />
-          <img
-            src={MyImage}
-            alt="Profile"
-            className="rounded-full w-full h-full object-cover border-4 border-blue-500 relative z-10"
-          />
-          <motion.div 
-            className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-blue-300 opacity-20"
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </motion.div>
 
-        <motion.h2 
-          className="text-5xl md:text-6xl font-bold mb-6 text-blue-400"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-        >
-          Muhammed Alsabban
-        </motion.h2>
+const stack = ["Java", "React", "TypeScript", "Rust", "Go"];
 
-        <motion.p 
-          className="text-xl md:text-2xl text-gray-400 mb-12 max-w-2xl mx-auto"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        >
-          A Master student at Software Engineering
-        </motion.p>
+const fadeUp = {
+    hidden: { opacity: 0, y: 24 },
+    show: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: { delay: 0.15 + i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    }),
+};
 
-        <motion.div 
-          className="flex justify-center items-center gap-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
+export default function Header({ scale }: Props) {
+    return (
+        <section
+            id="top"
+            className="relative flex min-h-screen items-center overflow-hidden hero-gradient pt-28"
         >
-          {[{ icon: Briefcase, label: "Years Experience", value: "3+" }].map((stat, index) => (
+            {/* Animated grid + ambient orbs */}
+            <div className="pointer-events-none absolute inset-0 bg-grid" />
+            <div className="pointer-events-none absolute -left-24 top-32 h-72 w-72 rounded-full bg-accent-400/10 blur-[100px]" />
+            <div className="pointer-events-none absolute right-0 top-1/3 h-80 w-80 rounded-full bg-indigo-500/10 blur-[120px]" />
+
             <motion.div
-              key={index}
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+                className="container relative z-10 mx-auto grid items-center gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr]"
+                style={{ scale }}
             >
-              <stat.icon className="w-8 h-8 mx-auto mb-4 text-blue-400" />
-              <h4 className="text-3xl font-bold mb-2 text-white">{stat.value}</h4>
-              <p className="text-gray-400">{stat.label}</p>
+                {/* Left — copy */}
+                <div className="text-center lg:text-left">
+                    <motion.span
+                        custom={0}
+                        variants={fadeUp}
+                        initial="hidden"
+                        animate="show"
+                        className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/[0.07] px-3 py-1.5 text-xs font-medium text-emerald-300"
+                    >
+                        <span className="relative flex h-2 w-2">
+                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                        </span>
+                        Open to work · Full-time roles
+                    </motion.span>
+
+                    <motion.h1
+                        custom={1}
+                        variants={fadeUp}
+                        initial="hidden"
+                        animate="show"
+                        className="mt-6 text-4xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl"
+                    >
+                        Muhammed
+                        <br />
+                        <span className="gradient-text">Alsabban</span>
+                    </motion.h1>
+
+                    <motion.p
+                        custom={2}
+                        variants={fadeUp}
+                        initial="hidden"
+                        animate="show"
+                        className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-400 lg:mx-0"
+                    >
+                        Software Engineer &amp; Master's student at SDU. I design and build
+                        robust, well-tested software across the full stack.
+                    </motion.p>
+
+                    <motion.div
+                        custom={3}
+                        variants={fadeUp}
+                        initial="hidden"
+                        animate="show"
+                        className="mt-5 flex items-center justify-center gap-2 text-sm text-gray-500 lg:justify-start"
+                    >
+                        <MapPin className="h-4 w-4 text-accent-400" />
+                        Denmark · M.Sc. Software Engineering
+                    </motion.div>
+
+                    {/* Tech ticker */}
+                    <motion.div
+                        custom={4}
+                        variants={fadeUp}
+                        initial="hidden"
+                        animate="show"
+                        className="mt-6 flex flex-wrap justify-center gap-2 lg:justify-start"
+                    >
+                        {stack.map((t) => (
+                            <span key={t} className="chip text-xs">
+                                {t}
+                            </span>
+                        ))}
+                    </motion.div>
+
+                    {/* CTAs */}
+                    <motion.div
+                        custom={5}
+                        variants={fadeUp}
+                        initial="hidden"
+                        animate="show"
+                        className="mt-9 flex flex-col items-center gap-3 sm:flex-row lg:justify-start"
+                    >
+                        <motion.a
+                            href="#projects"
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-400 px-7 py-3 font-semibold text-ink-950 shadow-glow transition-shadow hover:shadow-[0_0_50px_-8px_rgba(34,211,238,0.6)] sm:w-auto"
+                        >
+                            View my work
+                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </motion.a>
+
+                        <motion.a
+                            href="mailto:muals0101@gmail.com"
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3 font-semibold text-white transition-colors hover:border-accent-400/50 hover:bg-white/[0.06] sm:w-auto"
+                        >
+                            <Mail className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
+                            Get in touch
+                        </motion.a>
+                    </motion.div>
+                </div>
+
+                {/* Right — portrait */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative mx-auto w-64 sm:w-80 lg:w-full lg:max-w-md"
+                >
+                    <div className="absolute -inset-3 animate-spin-slow rounded-[2rem] bg-gradient-to-tr from-accent-400/40 via-indigo-500/20 to-transparent blur-2xl" />
+                    <div className="glass-card relative overflow-hidden rounded-[2rem] p-2">
+                        <img
+                            src={MyImage}
+                            alt="Muhammed Alsabban"
+                            className="aspect-[4/5] w-full rounded-[1.6rem] object-cover"
+                        />
+                        <div className="absolute inset-x-2 bottom-2 rounded-2xl border border-white/10 bg-ink-900/70 px-4 py-3 backdrop-blur-md">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <p className="font-display text-sm font-semibold text-white">
+                                        3+ years
+                                    </p>
+                                    <p className="text-xs text-gray-400">building software</p>
+                                </div>
+                                <div className="text-right">
+                                    <p className="font-display text-sm font-semibold text-white">
+                                        Full-stack
+                                    </p>
+                                    <p className="text-xs text-gray-400">web &amp; backend</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
             </motion.div>
-          ))}
-        </motion.div>     
 
-        <motion.div 
-          className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-        >
-          <motion.a 
-            href="#projects" 
-            className="px-8 py-3 bg-blue-600 rounded-full hover:bg-blue-700 transition-all flex items-center justify-center group text-white"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span>View Projects</span>
-            <motion.span
-              className="inline-block ml-2"
-              initial={{ x: 0 }}
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >→</motion.span>
-          </motion.a>
-        </motion.div>
-
-        {/* CV Download Buttons */}
-        <motion.div 
-          className="mt-8 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-        >
-          <motion.a 
-            href={EnglishCV} 
-            download
-            className="group px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full hover:opacity-90 transition-all flex items-center justify-center text-white"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.4)" }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span>Download CV (EN)</span>
-            <motion.svg 
-              className="w-5 h-5 ml-2 transform group-hover:translate-y-1 transition-transform"
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
+            {/* Scroll cue */}
+            <motion.a
+                href="#about"
+                aria-label="Scroll to about"
+                className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 text-gray-500 transition-colors hover:text-accent-300 lg:block"
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 1.8, repeat: Infinity }}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </motion.svg>
-          </motion.a>
-
-          <motion.a 
-            href={DanishCV} 
-            download
-            className="group px-8 py-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full hover:opacity-90 transition-all flex items-center justify-center text-white"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(96, 165, 250, 0.4)" }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span>Hent CV (DA)</span>
-            <motion.svg 
-              className="w-5 h-5 ml-2 transform group-hover:translate-y-1 transition-transform"
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </motion.svg>
-          </motion.a>
-        </motion.div>
-      </motion.div>
-    </section>
-  );
+                <div className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-current p-1.5">
+                    <div className="h-2 w-1 rounded-full bg-current" />
+                </div>
+            </motion.a>
+        </section>
+    );
 }
