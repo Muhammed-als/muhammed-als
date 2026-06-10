@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github, Lock, Shield, Star } from "lucide-react";
+import FlexSpace from "../assets/images/BookSystem.png";
 import HandDetecting from "../assets/images/HandDetecting.png";
 import Tic_Tac_Toe from "../assets/images/Tic_Tac_Toe.png";
 import DyslexiaExtension from "../assets/images/DyslexiaExtension.jpg";
@@ -20,29 +21,36 @@ const featured = {
 
 const projects = [
     {
+        title: "FlexSpace",
+        description: "A full-stack booking system built with React, TypeScript, Node.js (Express) and PostgreSQL. Designed with concurrency protection, containerization and role-based access control (RBAC).",
+        image: FlexSpace,
+        tags: ["React", "TypeScript", "Node.js", "PostgreSQL"],
+        link: "https://github.com/Muhammed-als/BookingSystem",
+    },
+    {
         title: "HandDetecting",
-        description: "A computer-vision app that detects and tracks hands in real time from a webcam feed using Python and OpenCV.",
+        description: "Real-time hand gesture control system built with MediaPipe and OpenCV.",
         image: HandDetecting,
         tags: ["Python"],
         link: "https://github.com/Muhammed-als/HandDetecting",
     },
     {
         title: "FlexMuscles",
-        description: "A TypeScript application focused on fitness tracking — built with a strongly typed, component-driven architecture.",
+        description: "An intuitive, lightweight, and responsive frontend-only workout explorer. Navigate a highly structured, hierarchical directory of muscle groups to discover curated YouTube tutorials, then **add, edit, and delete** your own exercises. Everything is saved locally in your browser.",
         image: FlexMuscles,
         tags: ["TypeScript"],
         link: "https://github.com/Muhammed-als/FlexMuscles",
     },
     {
         title: "Dyslexia Extension",
-        description: "A browser extension that simulates different dyslexia types on any page and provides reading aids — built with accessibility at its core.",
+        description: "A Chrome extension that makes reading on the web and PDFs easier with text-to-speech, visual focus tools, and dyslexia-friendly formatting.",
         image: DyslexiaExtension,
         tags: ["JavaScript"],
         link: "https://github.com/Muhammed-als/DyslexiaExtension",
     },
     {
         title: "Tic Tac Toe",
-        description: "A CLI Tic Tac Toe game with a basic computer opponent — a focused exercise in game logic and clean control flow.",
+        description: "A desktop Tic-Tac-Toe game built with Java and JavaFX, featuring a clean UI, game logic separation, and automated unit tests.",
         image: Tic_Tac_Toe,
         tags: ["Java"],
         link: "https://github.com/Muhammed-als/Tic_Tac_Toe",
