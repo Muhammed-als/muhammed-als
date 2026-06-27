@@ -5,6 +5,15 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   base: '/muhammed-als/',
   plugins: [react()],
+  server: {
+    host: '127.0.0.1',
+    fs: {
+      strict: true,
+    },
+  },
+  preview: {
+    host: '127.0.0.1',
+  },
   optimizeDeps: {
     exclude: ['lucide-react'],
   },

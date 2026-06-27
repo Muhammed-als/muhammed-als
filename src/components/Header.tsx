@@ -67,7 +67,7 @@ export default function Header({ scale }: Props) {
                         animate="show"
                         className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-400 lg:mx-0"
                     >
-                        Software Engineer &amp; Master's student at SDU. I design and build
+                        Software Engineer with a Master's from SDU. I design and build
                         robust, well-tested software across the full stack.
                     </motion.p>
 

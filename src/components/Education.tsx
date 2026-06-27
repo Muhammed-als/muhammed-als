@@ -6,8 +6,8 @@ const education = [
         degree: "Master's in Software Engineering",
         school: "University of Southern Denmark (SDU)",
         period: "2024 — 2026",
-        note: "Expected graduation 2026",
-        current: true,
+        note: "",
+        current: false,
     },
     {
         degree: "Bachelor's in Software Engineering",

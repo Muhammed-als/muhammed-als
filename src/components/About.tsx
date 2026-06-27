@@ -47,12 +47,12 @@ export default function About({ aboutRef }: Props) {
                         <div className="glass-card p-8 sm:p-10">
                             <div className="space-y-6 text-base leading-relaxed text-gray-300">
                                 <p>
-                                    I'm a Software Engineering master's student at{" "}
+                                    I hold a Master's in Software Engineering from{" "}
                                     <span className="font-medium text-white">
                                         SDU (University of Southern Denmark)
                                     </span>{" "}
                                     with strong skills in full-stack development and system design.
-                                    Through my studies I've built a strong foundation in software
+                                    Through my studies I built a strong foundation in software
                                     development methods, data structures, algorithms, networks and
                                     computer systems — as well as software testing and quality
                                     assurance — and gained hands-on experience with technologies
