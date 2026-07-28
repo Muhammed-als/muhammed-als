@@ -14,7 +14,7 @@ const categories = [
     {
         icon: Layers,
         title: "Frameworks & Web",
-        skills: ["React", "Next.js", "Spring", "Laravel", "React Native", "Tailwind CSS", "HTML", "CSS"],
+        skills: ["React", "Blazor", "Next.js", "Spring", "ASP.NET Core / .NET" ,"Laravel", "React Native", "Tailwind CSS", "HTML", "CSS"],
     },
     {
         icon: Database,
